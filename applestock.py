@@ -5,21 +5,19 @@ import pandas as pd
 sess = tf.Session()
 
 file = np.array(pd.read_csv("apg.csv"))
-u = np.array([x[0] for x in file])
-n = np.array([x[1] for x in file])
 
-x_train = u
-y_train = n
-o1 = 0.000001
-o2 = 0.00000001
-o3 = 0.00000001
-o4 = 0.00000001
-o5 = 0.00000001
-x_test = np.array([22])
-y_test = np.array([164.05])
+x_train =  np.array([x[1] for x in file])
+y_train =  np.array([x[0] for x in file])
+o1 = 0.000000001
+o2 = 0.000000000001
+o3 = 0.00000000000001
+o4 = 0.000000000000001
+o5 = 0.000000000000001
+y_test = np.array([150.550003])
+x_test = np.array([170925])
 
-x_accuracy = ((20))
-y_accuracy = ((164))
+y_accuracy = ((150.550003))
+x_accuracy = ((170925))
 
 x = tf.placeholder(tf.float32)
 y = tf.placeholder(tf.float32)
@@ -30,7 +28,7 @@ b = tf.Variable(0.0)
 B = tf.Variable(0.0)
 w_= tf.Variable(0.0)
 b_= tf.Variable(0.0)
-c= tf.Variable(0.0)
+c = tf.Variable(0.0)
 v = tf.Variable(0.0)
 l = tf.Variable(0.0)
 p = tf.Variable(0.0)
